@@ -1,4 +1,4 @@
-import { StyleSheet, View, Text} from "react-native";
+import { StyleSheet, View} from "react-native";
 import Header from "../LoginPage/Header";
 import Form from "../LoginPage/Form";
 import Footer from "../LoginPage/Footer";

@@ -1,15 +1,23 @@
-import { StyleSheet, TextInput, TouchableOpacity, Text, View } from "react-native";
+import React from 'react';
+import { StyleSheet, TextInput, TouchableOpacity, Text, View } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
-function Form (){
-    return(
-        <View style={StyleSheet.formSection}>
-            <TextInput style={styles.name} placeholder='Name' placeholderTextColor={'#AFB0B6'}></TextInput>
-            <TextInput style={styles.email} placeholder='Email' placeholderTextColor={'#AFB0B6'}></TextInput>
-            <TouchableOpacity style={styles.loginButton}>
-                <Text style={styles.buttonText}>Log in</Text>
-            </TouchableOpacity>
-        </View>
-    )
+function Form() {
+  const navigation = useNavigation();
+
+  const handleLogin = () => {
+    navigation.replace('Homepage');
+  };
+
+  return (
+    <View style={styles.formSection}>
+      <TextInput style={styles.name} placeholder="Name" placeholderTextColor="#AFB0B6" />
+      <TextInput style={styles.email} placeholder="Email" placeholderTextColor="#AFB0B6" />
+      <TouchableOpacity style={styles.loginButton} onPress={handleLogin}>
+        <Text style={styles.buttonText}>Log in</Text>
+      </TouchableOpacity>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
@@ -19,10 +27,9 @@ const styles = StyleSheet.create({
     },
 
     name: {
-        width: 360,
+        width: 372,
         height: 52,
-        bottom: 15,
-        right: 2,
+        top: 261,
         paddingLeft: 20,
         borderWidth: 1,
         borderRadius: 10,
@@ -31,10 +38,9 @@ const styles = StyleSheet.create({
     },
 
     email: {
-        width: 360,
+        width: 372,
         height: 52,
-        top: 1,
-        right: 2,
+        top: 280,
         paddingLeft: 20,
         borderWidth: 1,
         borderRadius: 10,
@@ -42,10 +48,9 @@ const styles = StyleSheet.create({
     },
 
     loginButton: {
-        width: 360,
+        width: 372,
         height: 56,
-        top: 25,
-        right: 2,
+        top: 330,
         borderRadius: 5,
         backgroundColor: '#356899',
     },

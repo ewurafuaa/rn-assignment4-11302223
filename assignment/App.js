@@ -1,24 +1,23 @@
-import { StyleSheet, ScrollView, View } from 'react-native';
+// App.js
+import React, { useEffect } from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 import LoadingPage from './LoadingPage/LoadingPage';
+import Login from './LoginPage/Login';
+import HomePage from './HomePage/HomePage';
 
-export default function App() {
+const Stack = createStackNavigator();
+
+function App() {
   return (
-    <>
-    
-    <View style={styles.container}>
-      <LoadingPage/>
-    </View>
-    
-    </>
-    
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="Loading" component={LoadingPage} />
+        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Homepage" component={HomePage} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#FAFAFD',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;

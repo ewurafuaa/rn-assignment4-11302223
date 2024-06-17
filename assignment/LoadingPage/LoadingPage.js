@@ -1,18 +1,36 @@
+// LoadingPage.js
+import React, { useEffect } from 'react';
 import { StyleSheet, View, Image } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 function LoadingPage() {
-    return (
-        <View>
-            <Image source={require('../assets/Basketball.png')} style={styles.basketball} />
-        </View>
-    );
+  const navigation = useNavigation();
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      navigation.replace('Login');
+    }, 5000);
+
+    return () => clearTimeout(timer);
+  }, [navigation]);
+
+  return (
+    <View style={styles.container}>
+      <Image source={require('../assets/Basketball.png')} style={styles.basketball} />
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
-    basketball: {
-        width: 40,
-        height: 40,
-    }
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  basketball: {
+    width: 40,
+    height: 40,
+  },
 });
 
 export default LoadingPage;
