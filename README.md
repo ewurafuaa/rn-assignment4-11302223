@@ -25,3 +25,12 @@ This folder is also spit up into different files like the login page folder. It'
 **Featured Jobs**: Displays a card section of job opportunities.
 
 **Popular jobs**: Displays a list of popular jobs.
+
+#Screenshot
+![photo_2024-06-19_17-50-06](https://github.com/ewurafuaa/rn-assignment4-11302223/assets/170051346/98a4a7da-ab87-4165-a9c1-b3f181bab217)
+
+![photo_2024-06-19_17-52-35](https://github.com/ewurafuaa/rn-assignment4-11302223/assets/170051346/6a8a006f-e754-4dba-ab29-4e80c6cf91fc)
+
+![photo_2024-06-19_17-52-40](https://github.com/ewurafuaa/rn-assignment4-11302223/assets/170051346/fa2b2f35-2c65-449f-86d7-1c40baeab8ba)
+
+![photo_2024-06-19_17-52-53](https://github.com/ewurafuaa/rn-assignment4-11302223/assets/170051346/fefc7d51-7f06-4e35-ab7f-3986e562831e)
