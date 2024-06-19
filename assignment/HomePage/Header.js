@@ -1,18 +1,22 @@
-import {View, Text, Image, StyleSheet} from "react-native";
+import React from 'react';
+import { View, Text, Image, StyleSheet } from 'react-native';
 
-function Header(){
-    return (
-        <View style={styles.headerSection}>
-                <Text style={styles.title}>Eric Atsu</Text>
-                <Text style={styles.subtext}>eric@gmail.com</Text>
-                <View style={styles.imageSection}>
-                    <Image style={styles.profile} source={require('../assets/profile.jpeg')}></Image>
-                    <View style={styles.redDot}/>
-                </View>
-        </View>
-        
-    )
+function Header({route}) {
+    const { username, email} = route.params;
+  
+
+  return (
+    <View style={styles.headerSection}>
+      <Text style={styles.title}>{username}</Text>
+      <Text style={styles.subtext}>{email}</Text>
+      <View style={styles.imageSection}>
+        <Image style={styles.profile} source={require('../assets/profile.jpeg')} />
+        <View style={styles.redDot} />
+      </View>
+    </View>
+  );
 }
+
 
 
 const styles = StyleSheet.create({

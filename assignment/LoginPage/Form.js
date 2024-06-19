@@ -1,24 +1,27 @@
-import React from 'react';
-import { StyleSheet, TextInput, TouchableOpacity, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, TextInput, Text, View, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 function Form() {
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const navigation = useNavigation();
 
   const handleLogin = () => {
-    navigation.replace('Homepage');
+    navigation.navigate('Homepage', {username, email});
   };
 
   return (
     <View style={styles.formSection}>
-      <TextInput style={styles.name} placeholder="Name" placeholderTextColor="#AFB0B6" />
-      <TextInput style={styles.email} placeholder="Email" placeholderTextColor="#AFB0B6" />
+      <TextInput style={styles.name} placeholder="Name" placeholderTextColor="#AFB0B6" value={username} onChangeText={setUsername} />
+      <TextInput style={styles.email} placeholder="Email" placeholderTextColor="#AFB0B6" value={email} onChangeText={setEmail} />
       <TouchableOpacity style={styles.loginButton} onPress={handleLogin}>
-        <Text style={styles.buttonText}>Log in</Text>
+        <Text style={styles.buttonText}>Log In</Text>
       </TouchableOpacity>
     </View>
   );
 }
+
 
 const styles = StyleSheet.create({
     formSection:{

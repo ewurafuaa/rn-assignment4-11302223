@@ -8,8 +8,8 @@ function LoadingPage() {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      navigation.replace('Login');
-    }, 5000);
+      navigation.navigate('Login');
+    }, 2000);
 
     return () => clearTimeout(timer);
   }, [navigation]);
@@ -26,6 +26,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: '#000000',
   },
   basketball: {
     width: 40,

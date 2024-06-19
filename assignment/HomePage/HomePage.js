@@ -5,12 +5,12 @@ import Search from '../HomePage/Search';
 import FeaturedJobs from '../HomePage/FeaturedJobs';
 import PopularJobs from '../HomePage/PopularJobs';
 
-export default function HomePage() {
+export default function HomePage({route}) {
   return (
     <>
-    <ScrollView>
+    <ScrollView style={styles.scroll}>
     <View style={styles.container}>
-      <Header/>
+      <Header route={route}/>
       <Search/>
       <FeaturedJobs/>
       <PopularJobs/>
@@ -22,11 +22,15 @@ export default function HomePage() {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#FAFAFD',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+    scroll: {
+        backgroundColor: '#FAFAFD',
+    },
+
+    container: {
+        flex: 1,
+        backgroundColor: '#FAFAFD',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
 });
 
